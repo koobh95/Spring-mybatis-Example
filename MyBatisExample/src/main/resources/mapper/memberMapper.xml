@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tistory.ku_develog.dao.MemberDAO">
+	<select id="getAll" resultType="memberDto">
+		SELECT * 
+		FROM member_t 
+		ORDER BY id
+	</select>
+	
+	<select id="getMember" parameterType="String" resultType="memberDto">
+		SELECT * FROM member_t
+		WHERE id = #{id} 
+		ORDER BY id
+	</select>
+	
+	<insert id="insertMember" parameterType="memberDto">
+		INSERT INTO member_t
+		VALUES(#{id}, #{name}, #{age})
+	</insert>
+	
+	<delete id="deleteMember" parameterType="String">
+		DELETE FROM member_t
+		WHERE id = #{id}
+	</delete>
+	
+	<update id="updateMember" parameterType="memberDto">
+		UPDATE member_t SET
+		name = #{name}, age = #{age}
+		WHERE id = #{id}
+	</update>
+</mapper>
