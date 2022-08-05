@@ -4,7 +4,7 @@
 스프링에서 mybatis를 연동하는 방법에 대해 다루는 기초적인 예제
 
 
-티스토리 블로그 링크
+티스토리 포스팅 링크
 
 1. https://ku-develog.tistory.com/66
 
